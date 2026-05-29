@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="game-card" aria-labelledby="game-title">
+        <div class="hero">
+          <p class="eyebrow">Classic word game</p>
+          <h1 id="game-title">Hangman</h1>
+          <p class="intro">
+            Guess the hidden word one letter at a time. Six wrong guesses and the game is over.
+          </p>
+        </div>
+
+        <div class="game-board">
+          <section class="gallows" aria-label="Hangman drawing">
+            <svg viewBox="0 0 220 250" role="img" aria-labelledby="drawing-title">
+              <title id="drawing-title">Hangman progress drawing</title>
+              <line x1="25" y1="230" x2="190" y2="230"></line>
+              <line x1="55" y1="230" x2="55" y2="20"></line>
+              <line x1="55" y1="20" x2="150" y2="20"></line>
+              <line x1="150" y1="20" x2="150" y2="52"></line>
+              <circle class="body-part" data-part="1" cx="150" cy="75" r="23"></circle>
+              <line class="body-part" data-part="2" x1="150" y1="98" x2="150" y2="155"></line>
+              <line class="body-part" data-part="3" x1="150" y1="112" x2="115" y2="135"></line>
+              <line class="body-part" data-part="4" x1="150" y1="112" x2="185" y2="135"></line>
+              <line class="body-part" data-part="5" x1="150" y1="155" x2="122" y2="198"></line>
+              <line class="body-part" data-part="6" x1="150" y1="155" x2="178" y2="198"></line>
+            </svg>
+          </section>
+
+          <section class="play-area" aria-live="polite">
+            <div class="status-row">
+              <span id="category" class="badge">Category: Animals</span>
+              <span id="mistakes" class="badge badge-warning">Mistakes: 0 / 6</span>
+            </div>
+
+            <div id="word" class="word" aria-label="Hidden word"></div>
+
+            <p id="message" class="message">Pick a letter to begin.</p>
+
+            <div class="guesses">
+              <h2>Wrong guesses</h2>
+              <p id="wrong-letters" class="wrong-letters">None yet</p>
+            </div>
+          </section>
+        </div>
+
+        <section class="keyboard" aria-label="Letter choices" id="keyboard"></section>
+
+        <div class="actions">
+          <button id="new-game" class="primary-button" type="button">New game</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
